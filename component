@@ -1,0 +1,44 @@
+<template>
+    <div>
+      <!-- A imagem agora utiliza v-bind para vincular a variável imagemURL ao src -->
+      <img v-bind:src="imagemURL" class="img">
+    </div>
+    
+    <div class="profile-content">
+      <h2>Perfil do Usuário</h2>
+      <p>Detalhes do perfil...</p>
+      <!-- Botão de fechar -->
+      <button @click="$emit('close')">Fechar Perfil</button>
+    </div>
+  
+    Hello world!
+  </template>
+  
+  <script>
+  export default {
+    name: 'testeComponente',
+    
+    // Defina os dados do componente
+    data() {
+      return {
+        // Aqui você declara a variável imagemURL
+        imagemURL: 'https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2022/04/corinthians-lanca-aplicativo-oficial-com-conteudo-exclusivo-para-torcedores.jpg'
+      };
+    }
+  };
+  </script>
+  
+  <style>
+  .img {
+    margin-left: 200px;
+    height: 180px;
+    width: 180px;
+  }
+  
+  .profile-content {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  </style>
